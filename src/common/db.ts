@@ -1,3 +1,4 @@
+import { join } from 'path'
 import { DataSource } from 'typeorm'
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions'
 
@@ -9,9 +10,10 @@ const dbConfig: PostgresConnectionOptions = {
   password: 'passw0rd',
   database: 'test',
   schema: 'public',
+  entities: [join(__dirname, '../**/entity.ts')],
 }
 
-const AppDataSource = new DataSource(dbConfig)
+export const AppDataSource = new DataSource(dbConfig)
 
 export const initDataSource = async () => {
   console.info(`${initDataSource.name} start`)
