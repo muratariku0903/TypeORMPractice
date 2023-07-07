@@ -26,12 +26,23 @@ export const initDataSource = async () => {
     }
   } catch (e) {
     console.error(e)
+    throw e
   } finally {
     console.info(`${initDataSource.name} end`)
-    console.log('hello')
   }
 }
 
 export const closeDataSource = async () => {
-  // conso
+  console.info(`${closeDataSource.name} start`)
+
+  try {
+    if (AppDataSource.isInitialized) {
+      await AppDataSource.destroy()
+    }
+  } catch (e) {
+    console.warn(`DataSource close failed. because: ${e}`)
+    throw e
+  } finally {
+    console.info(`${closeDataSource.name} end`)
+  }
 }
