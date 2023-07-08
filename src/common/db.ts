@@ -11,6 +11,7 @@ const dbConfig: PostgresConnectionOptions = {
   database: 'test',
   schema: 'public',
   entities: [join(__dirname, '../**/entity.ts')],
+  logging: true,
 }
 
 export const AppDataSource = new DataSource(dbConfig)
