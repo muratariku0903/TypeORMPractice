@@ -27,3 +27,12 @@ values ('1', '1', '2019-07-20', 'open_session'),
   ('3', '2', '2019-07-21', 'end_session'),
   ('4', '3', '2019-06-25', 'open_session'),
   ('4', '3', '2019-06-25', 'end_session');
+
+-- CREATE TABLE public.activity1141 (
+--   user_id int4 NULL,
+--   session_id int4 NULL,
+--   activity_date date NULL,
+--   activity_type testschema.activity_type NULL,
+--   id serial4 NOT NULL,
+--   CONSTRAINT activity1141_pkey PRIMARY KEY (id)
+-- );
