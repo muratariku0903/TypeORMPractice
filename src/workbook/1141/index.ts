@@ -11,10 +11,9 @@ const solve = async () => {
     const startDate = '2019-06-28'
     const endDate = '2019-07-27'
 
-    const res = await AppDataSource
-      .createQueryBuilder(Activity1141, 'activity')
+    const res = await AppDataSource.createQueryBuilder(Activity1141, 'activity')
       .select(`activity.activity_date`, 'day')
-      .addSelect('COUNT(DISTINCT activity.user_id)','active_users')
+      .addSelect('COUNT(DISTINCT activity.user_id)', 'active_users')
       .groupBy('activity.activity_date')
       .having('MIN(activity.activity_date) >= :startDate', { startDate })
       .andHaving('MAX(activity.activity_date) <= :endDate', { endDate })
