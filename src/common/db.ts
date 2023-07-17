@@ -6,7 +6,7 @@ const dbConfig: PostgresConnectionOptions = {
   type: 'postgres',
   host: 'localhost',
   port: 5432,
-  username: 'test',
+  username: 'postgres',
   password: 'passw0rd',
   database: 'test',
   schema: 'public',
