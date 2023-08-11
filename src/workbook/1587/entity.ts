@@ -1,4 +1,3 @@
-import { transcode } from 'buffer'
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryColumn } from 'typeorm'
 
 @Entity({ name: 'users1587' })
