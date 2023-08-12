@@ -1,9 +1,23 @@
-// var res = document.getElementsByTagName('tbody')[2].children
-// const data = []
-// for (const item of Object.values(res)) {
-//   const tds = item.children
-//   const target = {
-//     key: `(${tds[1].innerText}, ${tds[2].innerText}, ${tds[3].innerText}, ${tds[4].innerText}, ${tds[5].innerText}),`,
-//   }
-//   data.push(target)
-// }
+import { DataSource } from 'typeorm'
+import { closeDataSource, initDataSource } from '../../common/db'
+import { Book } from './entities/book'
+
+const solve = async () => {
+  let ds: DataSource | null = null
+
+  try {
+    ds = await initDataSource({ schema: 'sqlab' })
+
+    const res = await ds.createQueryBuilder(Book, 'b').getMany()
+
+    console.log(res)
+  } catch (e) {
+    console.error(e)
+  } finally {
+    if (ds) {
+      await closeDataSource(ds)
+    }
+  }
+}
+
+solve()

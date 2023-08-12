@@ -10,23 +10,37 @@ const dbConfig: PostgresConnectionOptions = {
   password: 'passw0rd',
   database: 'test',
   schema: 'public',
-  entities: [join(__dirname, '../**/entity.ts')],
+  entities: [join(__dirname, '../**/entity.ts'), join(__dirname, '../**/entities/**.ts')],
   logging: true,
 }
 
-export const AppDataSource = new DataSource(dbConfig)
-
-export const initDataSource = async () => {
+export const initDataSource = async (param?: DataCustomSourceParam): Promise<DataSource> => {
   console.info(`${initDataSource.name} start`)
 
-  try {
-    if (!AppDataSource.isInitialized) {
-      await AppDataSource.initialize()
+  let ds
+  let config = dbConfig
+  if (param) {
+    if (param.schema) {
+      config = { ...config, schema: param.schema }
     }
 
-    if (!AppDataSource.isInitialized) {
+    ds = new DataSource(config)
+  }
+
+  if (!ds) {
+    throw new Error('Failed DataSource instanced.')
+  }
+
+  try {
+    if (!ds.isInitialized) {
+      await ds.initialize()
+    }
+
+    if (!ds.isInitialized) {
       throw new Error('DataSource initialize failed.')
     }
+
+    return ds
   } catch (e) {
     console.error(e)
     throw e
@@ -35,12 +49,12 @@ export const initDataSource = async () => {
   }
 }
 
-export const closeDataSource = async () => {
+export const closeDataSource = async (ds: DataSource): Promise<void> => {
   console.info(`${closeDataSource.name} start`)
 
   try {
-    if (AppDataSource.isInitialized) {
-      await AppDataSource.destroy()
+    if (ds.isInitialized) {
+      await ds.destroy()
     }
   } catch (e) {
     console.warn(`DataSource close failed. because: ${e}`)
@@ -48,4 +62,8 @@ export const closeDataSource = async () => {
   } finally {
     console.info(`${closeDataSource.name} end`)
   }
+}
+
+type DataCustomSourceParam = {
+  schema?: string
 }
