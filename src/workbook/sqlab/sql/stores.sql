@@ -15,3 +15,7 @@ CREATE TABLE IF NOT EXISTS sqlab.stores(
   holiday holiday,
   PRIMARY key (id)
 );
+INSERT into sqlab.stores (name, holiday)
+values ('A店', '月曜日'),
+  ('B店', '年中無休'),
+  ('オンライン', 'ー');
