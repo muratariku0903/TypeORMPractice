@@ -1,4 +1,5 @@
-import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm'
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
+import { BookSale } from './bookSale'
 
 @Entity({ name: 'books' })
 export class Book {
@@ -14,6 +15,6 @@ export class Book {
   @Column()
   total_page!: number
 
-  // @OneToMany(() => Transactions1587, (transaction) => transaction.account)
-  // transactions!: Transactions1587[]
+  @OneToMany(() => BookSale, (bs) => bs.book_id)
+  book_sales!: BookSale[]
 }
