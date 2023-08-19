@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS sqlab.book_sales(
   figure serial not null,
   PRIMARY KEY (id),
   foreign key (book_id) references sqlab.books(id),
-  foreign key (store_id) references sqlab.stores(id),
+  foreign key (store_id) references sqlab.stores(id)
 );
 INSERT INTO sqlab.book_sales (book_id, store_id, price, stock, figure)
 values (1, 1, 3500, 1000, 200),

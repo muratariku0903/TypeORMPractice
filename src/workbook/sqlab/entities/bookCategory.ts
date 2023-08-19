@@ -1,9 +1,9 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 import { Book } from './book'
-import { Store } from './store'
+import { Category } from './category'
 
-@Entity({ name: 'book_sales' })
-export class BookSale {
+@Entity({ name: 'book_categories' })
+export class BookCategory {
   @PrimaryGeneratedColumn()
   id!: number
 
@@ -11,22 +11,13 @@ export class BookSale {
   book_id!: number
 
   @Column()
-  store_id!: number
-
-  @Column()
-  price!: number
-
-  @Column()
-  stock!: number
-
-  @Column()
-  figure!: number
+  category_id!: number
 
   @ManyToOne(() => Book)
   @JoinColumn({ name: 'book_id' })
   book!: Book
 
-  @ManyToOne(() => Store)
-  @JoinColumn({ name: 'store_id' })
-  store!: Store
+  @ManyToOne(() => Category)
+  @JoinColumn({ name: 'category_id' })
+  category!: Category
 }
