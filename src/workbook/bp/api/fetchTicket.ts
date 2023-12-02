@@ -1,7 +1,7 @@
 import { DataSource } from 'typeorm'
 import { closeDataSource, initDataSource } from '../../../common/db'
 import { Ticket } from '../entities/ticket'
-import { BasicInformation, BasicInformationType } from '../entities/basic_information'
+import { BasicInformation } from '../entities/basic_information'
 
 const fetchTicket = async (ticketNumber: number) => {
   let ds: DataSource | null = null
@@ -21,13 +21,13 @@ const fetchTicket = async (ticketNumber: number) => {
     }
 
     const contractNumber = ticket.contract_number
-    const relatedInfos = await ds
+    const relatedTickets = await ds
       .createQueryBuilder(Ticket, 'ticket')
       .where('ticket.contract_number = :contractNumber', { contractNumber })
       .andWhere('ticket.ticket_number != :ticketNumber', { ticketNumber })
       .getMany()
 
-    console.log(relatedInfos)
+    console.log(relatedTickets)
 
     const basicInfos = await ds
       .createQueryBuilder(BasicInformation, 'basicInformation')
