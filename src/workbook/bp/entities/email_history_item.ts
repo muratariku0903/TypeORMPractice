@@ -12,6 +12,9 @@ export class EmailHistoryItem {
   @Column()
   mail_status!: string
 
+  @Column()
+  delete_flg!: boolean
+
   @ManyToOne(() => EmailHistory, (emailHistory) => emailHistory.mail_number)
   @JoinColumn({ name: 'mail_number' })
   emailHistory!: EmailHistory

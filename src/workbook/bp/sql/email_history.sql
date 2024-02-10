@@ -20,6 +20,8 @@ end
 -- 直前の関数定義が「PL/pgSQL」というプロシージャル言語（プログラミング言語をSQLに拡張してくれる言語）であることを宣言
 $$ language plpgsql;
 
+-- drop if exists trigger trigger_generate_mail_number
+
 create trigger trigger_generate_mail_number before insert on bp.email_histories for each row execute function generate_mail_number()
 
 insert into bp.email_histories(mail_type,scheduled_send_datetime,title,body) 
