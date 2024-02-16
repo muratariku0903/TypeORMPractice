@@ -24,6 +24,6 @@ $$ language plpgsql;
 
 create trigger trigger_generate_mail_number before insert on bp.email_histories for each row execute function generate_mail_number()
 
-insert into bp.email_histories(mail_type,scheduled_send_datetime,title,body) 
-values ('MANUAL','2024-02-02 00:00:00','test','this is test body.')
+insert into bp.email_histories(mail_type,scheduled_send_datetime,title,body,mail_status) 
+values ('MANUAL','2024-02-02 00:00:00','test','this is test body.','BEFORE_SENDING')
 
