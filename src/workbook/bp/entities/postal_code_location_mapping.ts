@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryColumn } from 'typeorm'
+import { Entity, JoinColumn, OneToOne, PrimaryColumn } from 'typeorm'
 import { Office } from './office'
 
 @Entity({ name: 'postal_code_location_mapping' })

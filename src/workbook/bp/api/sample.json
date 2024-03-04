@@ -1,0 +1,122 @@
+[
+  {
+    "postal_code": "0000000",
+    "company_code": 1,
+    "company_name": "会社A",
+    "office_code": 1,
+    "office_name": "拠点A",
+    "department_code": 4,
+    "department_name": "部門D",
+    "department_type": "D"
+  },
+  {
+    "postal_code": "0000000",
+    "company_code": 1,
+    "company_name": "会社A",
+    "office_code": 1,
+    "office_name": "拠点A",
+    "department_code": 3,
+    "department_name": "部門C",
+    "department_type": "C"
+  },
+  {
+    "postal_code": "0000000",
+    "company_code": 1,
+    "company_name": "会社A",
+    "office_code": 1,
+    "office_name": "拠点A",
+    "department_code": 2,
+    "department_name": "部門B",
+    "department_type": "B"
+  },
+  {
+    "postal_code": "0000000",
+    "company_code": 1,
+    "company_name": "会社A",
+    "office_code": 1,
+    "office_name": "拠点A",
+    "department_code": 1,
+    "department_name": "部門A",
+    "department_type": "A"
+  },
+  {
+    "postal_code": "1111111",
+    "company_code": 2,
+    "company_name": "会社B",
+    "office_code": 2,
+    "office_name": "拠点B",
+    "department_code": 8,
+    "department_name": "部門D",
+    "department_type": "D"
+  },
+  {
+    "postal_code": "1111111",
+    "company_code": 2,
+    "company_name": "会社B",
+    "office_code": 2,
+    "office_name": "拠点B",
+    "department_code": 7,
+    "department_name": "部門C",
+    "department_type": "C"
+  },
+  {
+    "postal_code": "1111111",
+    "company_code": 2,
+    "company_name": "会社B",
+    "office_code": 2,
+    "office_name": "拠点B",
+    "department_code": 6,
+    "department_name": "部門B",
+    "department_type": "B"
+  },
+  {
+    "postal_code": "1111111",
+    "company_code": 2,
+    "company_name": "会社B",
+    "office_code": 2,
+    "office_name": "拠点B",
+    "department_code": 5,
+    "department_name": "部門A",
+    "department_type": "A"
+  },
+  {
+    "postal_code": "2222222",
+    "company_code": 3,
+    "company_name": "会社C",
+    "office_code": 3,
+    "office_name": "拠点C",
+    "department_code": 12,
+    "department_name": "拠点D",
+    "department_type": "D"
+  },
+  {
+    "postal_code": "2222222",
+    "company_code": 3,
+    "company_name": "会社C",
+    "office_code": 3,
+    "office_name": "拠点C",
+    "department_code": 11,
+    "department_name": "部門C",
+    "department_type": "C"
+  },
+  {
+    "postal_code": "2222222",
+    "company_code": 3,
+    "company_name": "会社C",
+    "office_code": 3,
+    "office_name": "拠点C",
+    "department_code": 10,
+    "department_name": "部門B",
+    "department_type": "B"
+  },
+  {
+    "postal_code": "2222222",
+    "company_code": 3,
+    "company_name": "会社C",
+    "office_code": 3,
+    "office_name": "拠点C",
+    "department_code": 9,
+    "department_name": "部門A",
+    "department_type": "A"
+  }
+]
