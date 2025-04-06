@@ -4,25 +4,32 @@
   "description": "typeORMの練習",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ts-node-api": "ts-node -r tsconfig-paths/register src/workbook/bp/api"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.782.0",
+    "@aws-sdk/lib-storage": "^3.782.0",
+    "csv-stringify": "^6.5.2",
     "dayjs": "^1.11.9",
     "fast-csv": "^4.3.6",
-    "pg": "^8.11.0",
+    "pg": "^8.14.1",
+    "pg-query-stream": "^4.8.1",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.17"
   },
   "devDependencies": {
     "@types/node": "^20.3.1",
+    "@types/pg": "^8.11.11",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^3.0.0",
     "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.3"
   }
 }

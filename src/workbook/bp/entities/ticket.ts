@@ -17,4 +17,7 @@ export class Ticket {
 
   @Column()
   application_type!: ApplicationType
+
+  @Column()
+  status!: string
 }
